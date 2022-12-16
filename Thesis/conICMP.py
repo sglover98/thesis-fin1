@@ -24,8 +24,8 @@ def icmpC2():
     ban_IP = ipattk.ipattk
     
     #places ip on ban list using ip and saves the list
-    subprocess.run(["iptables", "-A", "INPUT", "-s", ban_IP, "-j", "DROP"])
-    subprocess.run(["iptables-save"],shell=True)
+    subprocess.run(["sudo","iptables", "-A", "INPUT", "-s", ban_IP, "-j", "DROP"])
+    subprocess.run(["sudo","iptables-save"],shell=True)
     
     #creat s object to generate ICMP response
     o = socket.socket(socket.AF_INET,socket.IPPROTO_ICMP)
@@ -45,6 +45,7 @@ def icmpC2():
         o.close()
     except:
         pass
+
 
 
 #disconnect all network interfaces and change the ip address of the system
@@ -110,7 +111,7 @@ def icmpC4():
     #execute subprocess shutdown for all found interfaces
     for i in networks:
         subprocess.run(["sudo","ip", "link", "set", "dev", i, "down"])
-        subprocess.run(["iptables-save"])
+        subprocess.run(["sudp","iptables-save"])
     
     time.sleep(30)
     

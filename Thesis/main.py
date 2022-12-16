@@ -16,23 +16,23 @@ print("Thesis Project-Stanley Glover")
 
 ### Comment out StartScript() if snort is already installed and configured to your linux system
 
-#def StartScript():
+def StartScript():
     
-    #subprocess.run(['sudo sh root.sh'], shell=True)
-    #print("manipulating sudo permissions")
+    subprocess.run(['sudo sh root.sh'], shell=True)
+    print("manipulating sudo permissions")
     
-    #subprocess.run(['sudo sh snortsetup.sh'], shell=True)
-    #print("installing snort and configuring rules")
+    subprocess.run(['sudo sh snortsetup.sh'], shell=True)
+    print("installing snort and configuring rules")
     
-    #subprocess.run(['sudo sh start.sh'], shell=True)
-    #print("starting snort")
+    subprocess.run(['sudo sh start.sh'], shell=True)
+    print("starting snort")
     
-    #subprocess.run(['sudo sh snort2pcap.sh'], shell=True)
-    #print("converting snort to pcap")
-#StartScript()
+    subprocess.run(['sudo sh snort2pcap.sh'], shell=True)
+    print("converting snort to pcap")
+StartScript()
 
 
-loops = 1
+loops = 10000
 delay = 1
 
 #loop file 100000 times
@@ -181,6 +181,7 @@ for i in range(loops):
 
 
     def action():#pick and run containment options based on containment set
+        
         if proto == 'UDP':
             udpfunction()
         elif proto == 'TCP':
