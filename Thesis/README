@@ -1,7 +1,0 @@
-Note that this program has only been tested on UBUNTU 22.04 ARM64
-
-Installation of this program will result in the changes to your systems network interfaces, IP and Permissions.
-
-The included CSV file can be utilized as an alternative to configuring SNORT. In order to test the operation of each module the information in the last row of the CSV file can be manipulated. 
-
-There are some minor permission issues that may arrise during the operation or modification of the program.
